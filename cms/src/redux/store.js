@@ -1,19 +1,4 @@
-import { createStore } from 'redux'
+import { createStore } from "redux";
+import rootReducer from "./reducers";
 
-function counter(state = 0, action) {
-  switch (action.type) {
-    case 'INCREMENT':
-      return state + 1
-    case 'DECREMENT':
-      return state - 1
-    default:
-      return state
-  }
-}
-
-let store = createStore(counter)
-
-
-store.subscribe(() => console.log(store.getState()))
-
-export default store;
+export default createStore(rootReducer);
